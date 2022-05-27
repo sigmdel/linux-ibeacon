@@ -9,7 +9,7 @@ What You Need
 
 You need a computer capable of running Linux.  It can be a desktop or notebook PC, or any
 of the various single-board computers that are popular nowadays such as the [Raspberry Pi][PI]
-or [Arduino YUN][YUN].  It must have Python 2.6 or 2.7 installed.  This script does not need
+or [Arduino YUN][YUN].  ~~It must have Python 2.6 or 2.7 installed~~. This script does not need
 any special Python libraries or modules, just the ones that come standard with Python.
 
 Your version of Linux must be compatible with the new [Bluetooth 4.0 Low Energy (LE)][BLE] standard.
@@ -66,6 +66,29 @@ either [Beacon Toolkit][BEACON-APP-IOS] (for iOS) or [iBeacon Scanner][BEACON-AP
 and begin scanning.  Your newly-created iBeacon should appear in the list.  If not, check to make sure that you
 specified the correct UUID, major and minor numbers.  (For iOS devices, if you used a non-default UUID, you will have to
 enter it in the Beacon Toolkit app's settings screen.)
+
+Changes in this Fork
+--------------------
+
+This version of the script will run with both Python 2 and Python 3.
+
+There have been two ports of the original Donald Burr (dburr) [ibeacon](https://github.com/dburr/linux-ibeacon/blob/master/ibeacon): 
+
+  1. [ibeacon.python3](https://github.com/coldwufish/linux-ibeacon/blob/master/ibeacon_python3) by KunRu Wu (coldwufish) 
+  1. [ibeacon](https://github.com/michoo/linux-ibeacon/blob/master/ibeacon) by
+    MiChOo (michoo)
+
+The version in this fork is the MiChOo port with minor changes:
+
+  1. Reverted to 2-space indentation as in the Burr version. MiChOo had switched to 4-space indentation which is the "correct" convention according to the [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/#indentation). However, that makes comparison with the original difficult.
+
+  2. Followed [PEP 8](https://peps.python.org/pep-0008/#pet-peeves) and removed extraneous whitespace "immediately before the open parenthesis that starts the argument list of" the "print" function call.
+
+  3. Restored piping the `htcitool` `stdout` output to `/dev/null` in line 221
+     as per the comment two lines above. Use the verbose `-v` flag instead.
+
+**All credits go to Donald Burr for the original script and KunRu Wu and MiChOo for the port to Python 3.**
+
 
 License
 -------
