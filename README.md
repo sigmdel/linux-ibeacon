@@ -4,12 +4,14 @@ linux-ibeacon
 This is a Python script that creates an Apple® [iBeacon®][IBEACON]-compatible
 [Bluetooth LE beacon][BTBEACONS] using a computer running Linux and a Bluetooth LE adapter.
 
+The script runs under Python 2 and Python 3.
+
 What You Need
 -------------
 
 You need a computer capable of running Linux.  It can be a desktop or notebook PC, or any
 of the various single-board computers that are popular nowadays such as the [Raspberry Pi][PI]
-or [Arduino YUN][YUN].  ~~It must have Python 2.6 or 2.7 installed~~. This script does not need
+or [Arduino YUN][YUN]. This script does not need
 any special Python libraries or modules, just the ones that come standard with Python.
 
 Your version of Linux must be compatible with the new [Bluetooth 4.0 Low Energy (LE)][BLE] standard.
@@ -67,8 +69,8 @@ and begin scanning.  Your newly-created iBeacon should appear in the list.  If n
 specified the correct UUID, major and minor numbers.  (For iOS devices, if you used a non-default UUID, you will have to
 enter it in the Beacon Toolkit app's settings screen.)
 
-Changes in this Fork
---------------------
+Port to Python 3
+----------------
 
 This version of the script will run with both Python 2 and Python 3.
 
